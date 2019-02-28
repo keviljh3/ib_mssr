@@ -30,7 +30,7 @@ COPY server_linux_amd64 /root/server_linux_amd64
 RUN chmod +x /root/server_linux_amd64
 RUN chmod +x /root/udp2raw_amd64
 #EXPOSE 150/udp 151/udp 8339/tcp 17517/tcp
-EXPOSE 152/tcp
+EXPOSE 150/udp 151/udp
 RUN uname -a
 
 CMD ["/usr/bin/supervisord"]
