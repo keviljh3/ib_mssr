@@ -37,5 +37,5 @@ RUN chmod a+x /root/kcps64_170120
 #EXPOSE 150/udp 151/udp 8339/tcp 17517/tcp
 EXPOSE 150/udp 151/udp 152/tcp
 RUN uname -a
-CMD ["sh", "-c", "/start.sh"]
-#CMD ["/usr/bin/supervisord"]
+#CMD ["sh", "-c", "/start.sh"]
+CMD ["/usr/bin/supervisord"]
