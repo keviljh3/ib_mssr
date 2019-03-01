@@ -31,7 +31,7 @@ RUN chmod a+x /root/server_linux_amd64
 RUN chmod a+x /opt/finalspeed/start_finalspeed
 RUN chmod +x /root/udp2raw_amd64
 #EXPOSE 150/udp 151/udp 8339/tcp 17517/tcp
-EXPOSE 152/udp
+EXPOSE 150/udp 151/udp
 RUN uname -a
 
 CMD ["/usr/bin/supervisord"]
