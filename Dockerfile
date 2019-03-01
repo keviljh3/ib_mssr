@@ -29,9 +29,11 @@ COPY supervisord.conf /etc/supervisord.conf
 COPY server_linux_amd64 /root/server_linux_amd64
 RUN chmod a+x /root/server_linux_amd64
 RUN chmod a+x /opt/finalspeed/start_finalspeed
-RUN chmod +x /root/udp2raw_amd64
+RUN chmod a+x /root/udp2raw_amd64
+ADD start.sh /start.sh
+RUN chmod a+x /start.sh
 #EXPOSE 150/udp 151/udp 8339/tcp 17517/tcp
 EXPOSE 150/udp 151/udp
 RUN uname -a
-
-CMD ["/usr/bin/supervisord"]
+CMD ["sh", "-c", "/start.sh"]
+#CMD ["/usr/bin/supervisord"]
