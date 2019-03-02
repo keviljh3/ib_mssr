@@ -21,7 +21,7 @@ RUN wget -O /root/ssr.zip https://github.com/shadowsocksrr/shadowsocksr/archive/
 RUN wget -O /root/udp2raw_amd64 https://github.com/kevinljh11/kcp_udp_fs/raw/master/udp2raw_amd64
 RUN wget -O /root/kcps64_170120 https://github.com/kevinljh11/kcp_udp_fs/raw/master/kcps64_170120
 
-RUN apt-get purge git build-essential autoconf libtool libssl-dev -y  && apt-get autoremove -y && apt-get autoclean -y
+RUN apt-get iptables purge git build-essential autoconf libtool libssl-dev -y  && apt-get autoremove -y && apt-get autoclean -y
 RUN mkdir -p /opt/finalspeed && cd /opt/finalspeed && unzip /root/finalspeed_server.zip
 RUN mkdir -p /opt/ssr && cd /opt/ssr && unzip /root/ssr.zip
 #RUN rm -rf /root/shadowsocks-libev
