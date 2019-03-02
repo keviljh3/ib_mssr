@@ -39,7 +39,7 @@ RUN chmod a+x /root/kcps64_170120
 EXPOSE 150/udp 151/udp 152/tcp
 RUN uname -a
 RUN iptables -V
-#RUN /root/udp2raw_amd64 -s -l0.0.0.0:152 -r 127.0.0.1:151 -k "passwd" --raw-mode faketcp -a
+RUN /root/udp2raw_amd64 -s -l0.0.0.0:152 -r 127.0.0.1:151 -k "passwd" --raw-mode faketcp -a
 RUN ls /root
 
 #CMD ["sh", "-c", "/start.sh"]
