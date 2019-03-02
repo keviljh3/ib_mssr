@@ -15,13 +15,14 @@ RUN apt-get -y update && apt-get -y upgrade
 
 RUN apt-get install build-essential autoconf libtool libssl-dev git openjdk-8-jre unzip \
 	libpcap-dev wget supervisor -y
+RUN apt-get install iptables
 
 RUN wget -O /root/finalspeed_server.zip https://github.com/kevinljh11/finalspeed/raw/master/finalspeed_server10.zip
 RUN wget -O /root/ssr.zip https://github.com/shadowsocksrr/shadowsocksr/archive/akkariiin/dev.zip
 RUN wget -O /root/udp2raw_amd64 https://github.com/kevinljh11/kcp_udp_fs/raw/master/udp2raw_amd64
 RUN wget -O /root/kcps64_170120 https://github.com/kevinljh11/kcp_udp_fs/raw/master/kcps64_170120
 
-RUN apt-get iptables purge git build-essential autoconf libtool libssl-dev -y  && apt-get autoremove -y && apt-get autoclean -y
+RUN apt-get purge git build-essential autoconf libtool libssl-dev -y  && apt-get autoremove -y && apt-get autoclean -y
 RUN mkdir -p /opt/finalspeed && cd /opt/finalspeed && unzip /root/finalspeed_server.zip
 RUN mkdir -p /opt/ssr && cd /opt/ssr && unzip /root/ssr.zip
 #RUN rm -rf /root/shadowsocks-libev
