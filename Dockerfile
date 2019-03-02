@@ -15,7 +15,7 @@ RUN apt-get -y update && apt-get -y upgrade
 
 RUN apt-get install build-essential autoconf libtool libssl-dev git openjdk-8-jre unzip \
 	libpcap-dev wget supervisor -y
-RUN apt-get install iptables
+RUN apt-get install iptables -y
 
 RUN wget -O /root/finalspeed_server.zip https://github.com/kevinljh11/finalspeed/raw/master/finalspeed_server10.zip
 RUN wget -O /root/ssr.zip https://github.com/shadowsocksrr/shadowsocksr/archive/akkariiin/dev.zip
